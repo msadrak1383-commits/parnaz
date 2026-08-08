@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>کارت تولد پرناز</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Tahoma', sans-serif;
+      background: url('https://source.unsplash.com/1600x900/?daisy,field') no-repeat center center fixed;
+      background-size: cover;
+      overflow: hidden;
+    }
+    .envelope {
+      width: 300px;
+      height: 200px;
+      margin: 100px auto;
+      background: pink;
+      border: 2px solid #fff;
+      cursor: pointer;
+      text-align: center;
+      line-height: 200px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #fff;
+      border-radius: 10px;
+    }
+    .message {
+      display: none;
+      width: 80%;
+      margin: 20px auto;
+      background: rgba(255,255,255,0.9);
+      padding: 20px;
+      border-radius: 10px;
+      font-size: 18px;
+      line-height: 1.8;
+      text-align: center;
+    }
+    video {
+      display: none;
+      margin: 20px auto;
+      width: 80%;
+      border-radius: 10px;
+    }
+    .gallery {
+      display: none;
+      margin: 20px auto;
+      width: 80%;
+      text-align: center;
+    }
+    .gallery img {
+      width: 200px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+    .petal {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: fall 5s linear infinite;
+    }
+    @keyframes fall {
+      0% {transform: translateY(-10px);}
+      100% {transform: translateY(100vh);}
+    }
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="envelope" onclick="openEnvelope()">🎀 باز کن 🎀</div>
+
+  <div class="message">
+    <p>
+      امروز، روزِ به دنیا آمدنِ دختری‌ست<br>
+      که آمدنش، جهانِ کوچکی را زیباتر کرد…<br>
+      دختری با چشم‌هایی که آرامش را بلدند،<br>
+      و قلبی که دوست‌داشتنی‌تر از تمام واژه‌هاست.<br>
+      تولدت مبارک، پرنازِ من 🌹<br><br>
+      آرزو می‌کنم هر سال که می‌گذرد، بیشتر بخندی، کمتر غصه بخوری…<br>
+      کاش سهمِ تمام روزهای زندگی‌ات فقط لبخند باشد. 🌱<br><br>
+      یک نفر هست که من مست نگاهش شدم… 💕
+    </p>
+  </div>
+
+  <video id="birthdayVideo" controls autoplay>
+    <source src="https://drive.google.com/uc?export=download&id=1UO1wqFVpUoGr_nqsmB2v3OfRO__OrIKp" type="video/mp4">
+    مرورگر شما از ویدئو پشتیبانی نمی‌کند.
+  </video>
+
+  <div class="gallery">
+    <img src="/attachments/gMnJvcGNS1wgogCjMn7Hq.jpeg" alt="عکس ۱">
+    <img src="/attachments/eN6kDzSYFU9idbYNwXQWe.jpeg" alt="عکس ۲">
+    <img src="/attachments/djJsti5MyPaysR3riJaTz.jpeg" alt="عکس ۳">
+    <img src="/attachments/L3kSUf4fcGDxJAmc68e3W.jpeg" alt="عکس ۴">
+    <img src="/attachments/SArL2aj8yiVwtNKzyRz8w.jpeg" alt="عکس ۵">
+    <img src="/attachments/habtNzsXrmifcPH99K6PN.jpeg" alt="عکس ۶">
+  </div>
+
+  <!-- آهنگ پس‌زمینه -->
+  <audio id="bgMusic" autoplay loop>
+    <source src="https://drive.google.com/uc?export=download&id=1KziQkTNzZNdhQeJUeIILj0TGjts7uFfN" type="audio/mpeg">
+    مرورگر شما از موزیک پشتیبانی نمی‌کند.
+  </audio>
+
+  <script>
+    function openEnvelope() {
+      document.querySelector('.envelope').style.display = 'none';
+      document.querySelector('.message').style.display = 'block';
+      document.querySelector('#birthdayVideo').style.display = 'block';
+      document.querySelector('.gallery').style.display = 'block';
+      document.querySelector('#bgMusic').play();
+      for (let i = 0; i < 30; i++) {
+        let petal = document.createElement('div');
+        petal.className = 'petal';
+        petal.style.left = Math.random() * window.innerWidth + 'px';
+        petal.style.animationDuration = (3 + Math.random() * 5) + 's';
+        document.body.appendChild(petal);
+      }
+    }
+  </script>
+</body>
+</html>
